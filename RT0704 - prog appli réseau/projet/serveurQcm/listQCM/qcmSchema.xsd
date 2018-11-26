@@ -2,18 +2,25 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="qcm">
         <xs:complexType>
-            <xs:element name="question" type="xs:string" maxOccurs="unbounded">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="intitule" type="xs:string"/>
-                        <xs:element name="rep" type="xs:string" minOccurs="2" maxOccurs="4"/>
-                        <xs:complexType>
-                            <xs:attribute name="num" type="xs:integer" use="required"/>
-                        </xs:complexType>
-                    </xs:sequence>
-                    <xs:attribute name="num" type="xs:integer" use="required"/>
-                </xs:complexType>   
-            </xs:element>
+            <xs:sequence>
+                <xs:element name="question" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="intitule" type="xs:string" />
+                            <xs:element name="rep" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                          <xs:extension base="xs:string">
+                                            <xs:attribute name="numRep" type="xs:integer" use="required"/>
+                                          </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="num" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
             <xs:attribute name="idQcm" type="xs:integer" use="required"/>
             <xs:attribute name="formation" type="xs:string" use="required"/>
             <xs:attribute name="matiere" type="xs:string" use="required"/>

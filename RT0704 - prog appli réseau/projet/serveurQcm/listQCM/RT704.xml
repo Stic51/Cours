@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qcm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="qcmSchema.xsd" id="1" formation="RTA" matiere="RT0704">
+<qcm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="qcmSchema.xsd" idQcm="1" formation="RTA" matiere="RT0704">
     <question num="1">
         <intitule>Cette matière est-elle bien?</intitule>
-        <rep num="1">Oui</rep>
-        <rep num="2">Oui</rep>
+        <rep numRep="1">Oui</rep>
+        <rep numRep="2">Oui</rep>
     </question>
     <question num="2">
         <intitule>Recommendez-vous cette matière?</intitule>
-        <rep num="1">Oui</rep>
-        <rep num="2">Non</rep>
-        <rep num="3">Peut-être</rep>
-        <rep num="4">D la réponse D</rep>
+        <rep numRep="1">Oui</rep>
+        <rep numRep="2">Non</rep>
+        <rep numRep="3">Peut-être</rep>
+        <rep numRep="4">D la réponse D</rep>
     </question>
 </qcm>
