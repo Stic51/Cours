@@ -13,7 +13,9 @@ def creation_qcm(nom):
     #while (verif == 0):
     question = etree.Element('question')
     inti = input("Entrez l'intitulé de votre question :")
-    intitule = etree.SubElement(question,inti)
+    print "je bug ici"
+    intitule = etree.SubElement('intitule',inti)
+    print "non je bug la"
     #i = input("Entrez le nombre de réponse possible (min 2)")
 
     #while(i<2):

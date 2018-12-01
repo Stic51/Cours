@@ -1,0 +1,53 @@
+On appelle reseau anonyme , un reseau sur lequel il est impossible de distinguer deux(ou plus) sites
+
+lorsque nous voulons determiner le nombre de site l'aleatoire fait souvent bien les choses
+
+    -> Election
+        | -> algo a vague
+        | -> termine    - 1 site elu
+        |               - n-1 site battu
+        | -> nb de candidats arbitraire
+
+Exercice ecrire un algo d'election sur un anneau en connaissant n
+
+mot clé: Elect, fin
+en considerant qu'il  y a une orientation sur l'anneau (donc pas de précision a qui ont envoi)
+
+variable :
+    etat: init a candidat
+    n: entier init a n
+    id: entier
+    fini: booleen init a faux
+    max: booleen init a vrai
+    seul: booleen init a vrai
+
+TQ non(fini)
+    si (etat == battu)    
+        reception message(motclé,L,hop)
+        si (motclé == fin)
+            fini <- vrai
+        envoi (motclé,L,hop+1)
+    sinon  
+        choisir id € [1 N] au hassard
+        envoi message (elect, id, 1)
+        reception(motclé,L,hop)
+        TQ(hop != n)
+            envoi (motclé,L,hop+1)
+            si ( L > id )
+                max <- faux
+            si ( L == id )
+                seul <- faux
+            reception(motclé,L,hop)
+        finTQ
+        si (max et seul)
+            etat <- elu
+            envoi (fin,id)
+            reception (fin, id)
+            fini <- vrai
+        si non(max)
+            etat <- battu
+    max <- vrai
+    seul <- vrai
+finTQ
+
+
